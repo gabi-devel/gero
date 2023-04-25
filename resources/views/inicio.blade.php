@@ -21,8 +21,6 @@
             </a>
         </div>
 
-        <hr>
-        <a href="{{ route('saludar', "nombre") }}">Saludar</a>
 	<!-- Incluye los archivos JS de Bootstrap -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
 </body>
