@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Elegiste:</p>
-    <h1>{{ $carrera }}</h1>
+    
+    Hola {{ $nom }}
 </body>
 </html>

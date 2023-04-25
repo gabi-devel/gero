@@ -4,8 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class CarreraController extends Controller
 {
+    public function mostrarCarrera($indice)
+    {
+        $carreras = [
+            "Ingeniería de Sistemas",
+            "Ingeniería Industrial",
+            "Ingeniería Civil",
+            "Ingeniería Ambiental",
+            "Ingeniería Mecánica",
+            "Ingeniería Eléctrica",
+            "Ingeniería Química",
+            "Ingeniería Electrónica",
+            "Ingeniería de Telecomunicaciones",
+            "Ingeniería de Software"
+        ];
+
+        $carrera = $carreras[$indice];
+
+        return view('carrera', ['carrera' => $carrera]);
+    }
+
     public function index()
     {
         //

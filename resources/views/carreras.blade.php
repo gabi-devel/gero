@@ -7,42 +7,26 @@
 	<title>Listado de carreras aleatorias</title>
 </head>
 <body>
-	<h1>Listado de carreras aleatorias</h1>
+	<h1>Listado de carreras</h1>
+
+	@php
+    $carreras = [
+        "Ingeniería de Sistemas",
+        "Ingeniería Industrial",
+        "Ingeniería Civil",
+        "Ingeniería Ambiental",
+        "Ingeniería Mecánica",
+        "Ingeniería Eléctrica",
+        "Ingeniería Química",
+        "Ingeniería Electrónica",
+        "Ingeniería de Telecomunicaciones",
+        "Ingeniería de Software"
+    ];
+	@endphp
 	<ul id="carreras">
-		<!-- Aquí se agregarán las carreras generadas por JavaScript -->
+		@foreach ($carreras as $index => $carrera)
+			<li><a href="{{ route('carrera', $index) }}">{{ $carrera }}</a></li>
+		@endforeach
 	</ul>
-
-	<script>
-		// Crea una lista de carreras
-		var carreras = [
-			"Ingeniería de Sistemas",
-			"Ingeniería Industrial",
-			"Ingeniería Civil",
-			"Ingeniería Ambiental",
-			"Ingeniería Mecánica",
-			"Ingeniería Eléctrica",
-			"Ingeniería Química",
-			"Ingeniería Electrónica",
-			"Ingeniería de Telecomunicaciones",
-			"Ingeniería de Software"
-		];
-
-		// Genera una lista aleatoria de carreras
-		var carrerasAleatorias = [];
-		while (carrerasAleatorias.length < 5) {
-			var carreraAleatoria = carreras[Math.floor(Math.random() * carreras.length)];
-			if (!carrerasAleatorias.includes(carreraAleatoria)) {
-				carrerasAleatorias.push(carreraAleatoria);
-			}
-		}
-
-		// Agrega las carreras aleatorias a la lista HTML
-		var listaCarreras = document.getElementById("carreras");
-		carrerasAleatorias.forEach(function(carrera) {
-			var itemLista = document.createElement("li");
-			itemLista.innerText = carrera;
-			listaCarreras.appendChild(itemLista);
-		});
-	</script>
 </body>
 </html>
